@@ -6,7 +6,9 @@
   "scripts": {
     "clean": "rm -rf node_modules/ dist/",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently -k -n tsc,node 'tsc -w' 'nodemon -w dist dist/server.js'"
+    "server": "concurrently -k -n tsc,node 'tsc -w' 'nodemon -w dist dist/server.js'",
+    "client": "cd client && npm start",
+    "dev": "concurrently -k 'npm run server' 'npm run client'"
   },
   "repository": {
     "type": "git",
