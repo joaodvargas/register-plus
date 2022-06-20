@@ -1,0 +1,8 @@
+// https://www.robinwieruch.de/prettier-eslint/
+{
+  "extends": ["airbnb-base", "prettier"],
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": ["error"]
+  }
+}
