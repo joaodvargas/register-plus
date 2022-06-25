@@ -11,14 +11,16 @@ A trial app around registering for events
 5. We will use Material UI as the design system, with Emotion for managing styles
 
 - https://mui.com/material-ui/customization/how-to-customize/
+- https://mui.com/material-ui/customization/theming/
 - https://emotion.sh/docs/introduction
 
 ## TO DO v1
 
 ### Client
 
-- [ ] Install MUI @ https://mui.com/material-ui/getting-started/installation/
-- [ ] Follow tutorial for landing page
+- [x] Install MUI @ https://mui.com/material-ui/getting-started/installation/
+- [x] Follow tutorial for landing page @ https://www.youtube.com/watch?v=rK0Lz8x7npA&ab_channel=DailyWebCoding
+  - See other examples and tutorials at https://mui.com/material-ui/getting-started/learn/
 - [ ] Introduce React Router, with lazy loading
 - [ ] Add skeleton app pages, with react router and lazy loading
 - [ ] Add Auth0 authentication
