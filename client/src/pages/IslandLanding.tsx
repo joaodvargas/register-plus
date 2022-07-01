@@ -1,3 +1,4 @@
+// this is required to use the css prop - see https://emotion.sh/docs/css-prop#jsx-pragma
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from '@emotion/react';

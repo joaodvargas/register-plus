@@ -22,7 +22,7 @@ A trial app around registering for events
 - [x] Follow tutorial for landing page @ https://www.youtube.com/watch?v=rK0Lz8x7npA&ab_channel=DailyWebCoding
   - See other examples and tutorials at https://mui.com/material-ui/getting-started/learn/
 - [x] Introduce React Router, with lazy loading
-- [ ] Add skeleton app pages
+- [x] Add skeleton app pages
 - [ ] Add Auth0 authentication
 
 ### Server
