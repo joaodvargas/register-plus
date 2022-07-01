@@ -2,6 +2,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from '@emotion/styled';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
@@ -75,7 +76,7 @@ const TourCard = ({ tour }: TourCardProps) => {
           <CardImage src={tour.image} alt={tour.name} />
           <Box paddingX={1}>
             <Typography variant='subtitle1' component='h2'>
-              {tour.name}
+              <Link to={`/tour/${tour.id}`}>{tour.name}</Link>
             </Typography>
             <Box
               sx={{

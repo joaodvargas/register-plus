@@ -2,7 +2,8 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 const IslandLandingPage = React.lazy(() => import('./pages/IslandLanding'));
-const ToursLandingPage = React.lazy(() => import('./pages/ToursLanding'));
+const ToursHomePage = React.lazy(() => import('./pages/ToursHome'));
+const TourPage = React.lazy(() => import('./pages/Tour'));
 
 export default function App() {
   return (
@@ -21,7 +22,15 @@ export default function App() {
           path='/tours'
           element={
             <React.Suspense fallback={<>Loading...</>}>
-              <ToursLandingPage />
+              <ToursHomePage />
+            </React.Suspense>
+          }
+        />
+        <Route
+          path='/tour/:id'
+          element={
+            <React.Suspense fallback={<>Loading...</>}>
+              <TourPage />
             </React.Suspense>
           }
         />

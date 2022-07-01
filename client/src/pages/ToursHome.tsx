@@ -10,7 +10,7 @@ import SearchAppBar from '../components/AppBar';
 import cities from '../data/cities.json';
 import { Typography } from '@mui/material';
 
-export default function ToursLanding() {
+export default function ToursHome() {
   return (
     <div>
       <SearchAppBar />
