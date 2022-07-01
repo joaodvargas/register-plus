@@ -1,45 +1,49 @@
-import React, { useEffect, useState } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
-const callApi = async (): Promise<string> => {
-  const response = await fetch('/ping');
-  const body = await response.json();
-  if (response.status !== 200) throw Error(body.message);
+const IslandLandingPage = React.lazy(() => import('./pages/IslandLanding'));
+const ToursHomePage = React.lazy(() => import('./pages/ToursHome'));
+const TourPage = React.lazy(() => import('./pages/Tour'));
 
-  return body.message;
-};
-
-function App() {
-  const [data, setData] = useState('');
-
-  useEffect(() => {
-    const doCall = async () => {
-      const message = await callApi();
-      setData(message);
-    };
-    doCall();
-  });
-
+export default function App() {
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Learn React
-        </a>
-        <p>{!data ? 'Loading...' : `Received from server: ${data}`}</p>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<DefaultPage />} />
+        <Route
+          path='/island'
+          element={
+            <React.Suspense fallback={<>Loading...</>}>
+              <IslandLandingPage />
+            </React.Suspense>
+          }
+        />
+        <Route
+          path='/tours'
+          element={
+            <React.Suspense fallback={<>Loading...</>}>
+              <ToursHomePage />
+            </React.Suspense>
+          }
+        />
+        <Route
+          path='/tour/:id'
+          element={
+            <React.Suspense fallback={<>Loading...</>}>
+              <TourPage />
+            </React.Suspense>
+          }
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
-export default App;
+const DefaultPage = () => (
+  <div>
+    <h2>Choose your page</h2>
+    <Link to='/island'>Island page</Link>
+    <br />
+    <Link to='/tours'>Tours page</Link>
+  </div>
+);
